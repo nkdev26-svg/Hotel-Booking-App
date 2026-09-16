@@ -347,7 +347,8 @@ export default function GuestCheckOut() {
                                 .map((service, i) => (
                                   <div 
                                     key={i}
-                                    onClick={() => {
+                                    onMouseDown={(e) => {
+                                      e.preventDefault();
                                       handleAddCharge(guest.id, service.name, service.price);
                                       setChargeInputs(prev => ({...prev, [guest.id]: ''}));
                                       setShowDropdown(null);
